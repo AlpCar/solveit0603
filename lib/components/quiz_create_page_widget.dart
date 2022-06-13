@@ -7,7 +7,6 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuizCreatePageWidget extends StatefulWidget {
   const QuizCreatePageWidget({Key key}) : super(key: key);
