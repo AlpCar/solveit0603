@@ -111,7 +111,7 @@ class _ForgotPasswordScreenWidgetState
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
                       child: Text(
-                        'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
+                        '찾고자하는 계정의 이메일을 작성해주세요. \n비밀번호를 이메일로 보내드립니다.',
                         style: FlutterFlowTheme.of(context).bodyText2.override(
                               fontFamily: 'Outfit',
                               color: Color(0xFF57636C),
@@ -144,14 +144,14 @@ class _ForgotPasswordScreenWidgetState
                   controller: emailAddressController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Your email address...',
+                    labelText: 'ex) solveit@email.com',
                     labelStyle: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'Outfit',
                           color: Color(0xFF57636C),
                           fontSize: 14,
                           fontWeight: FontWeight.normal,
                         ),
-                    hintText: 'Enter your email...',
+                    hintText: '이메일',
                     hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Lexend Deca',
                           color: Color(0xFF57636C),
@@ -194,7 +194,7 @@ class _ForgotPasswordScreenWidgetState
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'Email required!',
+                          '이메일을 작성해주세요!',
                         ),
                       ),
                     );
@@ -204,8 +204,9 @@ class _ForgotPasswordScreenWidgetState
                     email: emailAddressController.text,
                     context: context,
                   );
+                  context.pop();
                 },
-                text: 'Send Link',
+                text: '보내기',
                 options: FFButtonOptions(
                   width: 270,
                   height: 50,

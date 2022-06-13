@@ -11,9 +11,13 @@ class QuizInfoScreenWidget extends StatefulWidget {
   const QuizInfoScreenWidget({
     Key key,
     this.quizID,
+    this.testerID,
+    this.title,
   }) : super(key: key);
 
   final String quizID;
+  final String testerID;
+  final String title;
 
   @override
   _QuizInfoScreenWidgetState createState() => _QuizInfoScreenWidgetState();
@@ -39,17 +43,17 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
             color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
+          onPressed: () async {
             context.pop();
           },
         ),
         title: Text(
           '문제 설명',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
-              ),
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
         actions: [
           Row(
@@ -69,26 +73,26 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                 ),
                 onPressed: () async {
                   var confirmDialogResponse = await showDialog<bool>(
-                        context: context,
-                        builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title: Text('삭제'),
-                            content: Text('해당 퀴즈를 삭제 하시겠습니까?'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, false),
-                                child: Text('취소'),
-                              ),
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, true),
-                                child: Text('삭제'),
-                              ),
-                            ],
-                          );
-                        },
-                      ) ??
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        title: Text('삭제'),
+                        content: Text('해당 퀴즈를 삭제 하시겠습니까?'),
+                        actions: [
+                          TextButton(
+                            onPressed: () =>
+                                Navigator.pop(alertDialogContext, false),
+                            child: Text('취소'),
+                          ),
+                          TextButton(
+                            onPressed: () =>
+                                Navigator.pop(alertDialogContext, true),
+                            child: Text('삭제'),
+                          ),
+                        ],
+                      );
+                    },
+                  ) ??
                       false;
                 },
               ),
@@ -109,7 +113,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
               ToggleIcon(
                 onPressed: () async {
                   setState(() => FFAppState().favoriteToggle =
-                      !FFAppState().favoriteToggle);
+                  !FFAppState().favoriteToggle);
                 },
                 value: FFAppState().favoriteToggle,
                 onIcon: Icon(
@@ -161,7 +165,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(12, 4, 12, 8),
+                            EdgeInsetsDirectional.fromSTEB(12, 4, 12, 8),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -187,12 +191,12 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                          fontFamily: 'Poppins',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -208,12 +212,12 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                          fontFamily: 'Poppins',
+                                          color:
+                                          FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -226,7 +230,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             height: 1,
                             decoration: BoxDecoration(
                               color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
+                              FlutterFlowTheme.of(context).primaryBtnText,
                             ),
                           ),
                           Card(
@@ -234,7 +238,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             color: Color(0xFFF5F5F5),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
+                              EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -244,7 +248,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                     child: Text(
                                       '문제 제목',
                                       style:
-                                          FlutterFlowTheme.of(context).title2,
+                                      FlutterFlowTheme.of(context).title2,
                                     ),
                                   ),
                                 ],
@@ -256,7 +260,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             color: Color(0xFFF5F5F5),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
+                              EdgeInsetsDirectional.fromSTEB(12, 0, 12, 0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -298,7 +302,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             color: Color(0xFFF5F5F5),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
+                              EdgeInsetsDirectional.fromSTEB(12, 0, 12, 4),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -312,9 +316,9 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 16,
-                                            ),
+                                          fontFamily: 'Poppins',
+                                          fontSize: 16,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -340,7 +344,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             alignment: AlignmentDirectional(0, 1),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed('ReviewNoteScreen');
@@ -350,13 +354,13 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                   width: 100,
                                   height: 50,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  FlutterFlowTheme.of(context).primaryColor,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                      ),
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                                   elevation: 2,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
@@ -371,7 +375,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             alignment: AlignmentDirectional(0, 1),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed('QuestionListScreen');
@@ -381,13 +385,13 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                   width: 100,
                                   height: 50,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  FlutterFlowTheme.of(context).primaryColor,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                      ),
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                                   elevation: 2,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
@@ -402,7 +406,7 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                             alignment: AlignmentDirectional(0, 1),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
+                              EdgeInsetsDirectional.fromSTEB(6, 0, 6, 0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed('QuizTakeScreen');
@@ -412,13 +416,13 @@ class _QuizInfoScreenWidgetState extends State<QuizInfoScreenWidget> {
                                   width: 80,
                                   height: 50,
                                   color:
-                                      FlutterFlowTheme.of(context).primaryColor,
+                                  FlutterFlowTheme.of(context).primaryColor,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .subtitle2
                                       .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                      ),
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                                   elevation: 2,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,

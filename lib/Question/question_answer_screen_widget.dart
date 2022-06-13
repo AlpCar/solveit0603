@@ -8,7 +8,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionAnswerScreenWidget extends StatefulWidget {
-  const QuestionAnswerScreenWidget({Key key}) : super(key: key);
+  const QuestionAnswerScreenWidget({
+    Key key,
+    this.askerID,
+    this.upDate,
+    this.title,
+    this.questionID,
+  }) : super(key: key);
+
+  final String askerID;
+  final String upDate;
+  final String title;
+  final String questionID;
 
   @override
   _QuestionAnswerScreenWidgetState createState() =>
@@ -44,16 +55,16 @@ class _QuestionAnswerScreenWidgetState
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+            context.pop();
           },
         ),
         title: Text(
           'Page Title',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
-              ),
+            fontFamily: 'Poppins',
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
         actions: [],
         centerTitle: false,
@@ -88,20 +99,20 @@ class _QuestionAnswerScreenWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
                           ],
                         ),
                         Text(
                           '0000-00-00 00:00에 게시됨',
                           style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
@@ -130,9 +141,9 @@ class _QuestionAnswerScreenWidgetState
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 20,
-                                            ),
+                                          fontFamily: 'Poppins',
+                                          fontSize: 20,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -152,11 +163,11 @@ class _QuestionAnswerScreenWidgetState
                           Text(
                             '질문 내용',
                             style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.normal,
-                                    ),
+                            FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ],
                       ),
@@ -198,11 +209,11 @@ class _QuestionAnswerScreenWidgetState
                         Text(
                           '0000-00-00 00:00에 게시됨',
                           style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
@@ -225,7 +236,7 @@ class _QuestionAnswerScreenWidgetState
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
                                     color:
-                                        FlutterFlowTheme.of(context).black600,
+                                    FlutterFlowTheme.of(context).black600,
                                   ),
                                 ),
                                 child: Padding(
@@ -236,9 +247,9 @@ class _QuestionAnswerScreenWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -284,11 +295,11 @@ class _QuestionAnswerScreenWidgetState
                         Text(
                           '0000-00-00 00:00에 게시됨',
                           style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
@@ -314,7 +325,7 @@ class _QuestionAnswerScreenWidgetState
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
                                     color:
-                                        FlutterFlowTheme.of(context).black600,
+                                    FlutterFlowTheme.of(context).black600,
                                   ),
                                 ),
                                 child: Padding(
@@ -325,9 +336,9 @@ class _QuestionAnswerScreenWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -361,7 +372,7 @@ class _QuestionAnswerScreenWidgetState
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
                               child: FaIcon(
                                 FontAwesomeIcons.userCheck,
                                 color: Colors.black,
@@ -377,11 +388,11 @@ class _QuestionAnswerScreenWidgetState
                         Text(
                           '0000-00-00 00:00에 게시됨',
                           style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                          ),
                         ),
                       ],
                     ),
@@ -404,7 +415,7 @@ class _QuestionAnswerScreenWidgetState
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
                                     color:
-                                        FlutterFlowTheme.of(context).black600,
+                                    FlutterFlowTheme.of(context).black600,
                                   ),
                                 ),
                                 child: Padding(
@@ -415,9 +426,9 @@ class _QuestionAnswerScreenWidgetState
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -450,9 +461,9 @@ class _QuestionAnswerScreenWidgetState
                           onChanged: (_) => EasyDebounce.debounce(
                             'textController',
                             Duration(milliseconds: 2000),
-                            () => setState(() {}),
+                                () => setState(() {}),
                           ),
-                          autofocus: true,
+                          autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
                             hintText: '답변을 작성해주세요.',
@@ -499,12 +510,12 @@ class _QuestionAnswerScreenWidgetState
                           height: 40,
                           color: Color(0xFF4B39EF),
                           textStyle:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                          FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                          ),
                           elevation: 2,
                           borderSide: BorderSide(
                             color: Colors.transparent,

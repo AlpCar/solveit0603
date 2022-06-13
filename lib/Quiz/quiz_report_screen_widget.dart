@@ -43,7 +43,7 @@ class _QuizReportScreenWidgetState extends State<QuizReportScreenWidget> {
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+            context.pop();
           },
         ),
         title: Text(

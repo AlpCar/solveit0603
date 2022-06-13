@@ -50,7 +50,7 @@ class _QuestionCreateScreenWidgetState
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+            context.pop();
           },
         ),
         title: Text(

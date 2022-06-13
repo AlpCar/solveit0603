@@ -43,7 +43,7 @@ class _ReviewNoteCreateScreenWidgetState
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+            context.pop();
           },
         ),
         title: Text(

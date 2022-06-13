@@ -7,6 +7,7 @@ import 'package:solveit/flutter_flow/flutter_flow_theme.dart';
 import 'package:solveit/flutter_flow/flutter_flow_util.dart';
 import 'package:solveit/flutter_flow/flutter_flow_widgets.dart';
 
+
 class WelcomeScreenWidget extends StatefulWidget {
   const WelcomeScreenWidget({Key key}) : super(key: key);
 
@@ -23,7 +24,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: Color(0xFFFFFFFF),
         automaticallyImplyLeading: false,
         title: Text(
           'Welcome',
@@ -38,7 +39,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFFF1F4F8),
+      backgroundColor: Color(0xFFFFFFFF),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -65,21 +66,23 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    'Solve iT!',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 85,
-                                          fontWeight: FontWeight.w800,
-                                        ),
-                                  ),
-                                  Icon(
-                                    Icons.face_retouching_natural,
-                                    color: Colors.black,
-                                    size: 100,
+                                  // Text(
+                                  //   'Solve iT!',
+                                  //   textAlign: TextAlign.center,
+                                  //   style: FlutterFlowTheme.of(context)
+                                  //       .bodyText1
+                                  //       .override(
+                                  //         fontFamily: 'Poppins',
+                                  //         fontSize: 85,
+                                  //         fontWeight: FontWeight.w800,
+                                  //       ),
+                                  // ),
+                                  Image.asset(
+                                    'lib/Models/logo.png',
+                                    width: MediaQuery.of(context).size.width,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.4,
+                                    fit: BoxFit.cover,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -306,7 +309,7 @@ class _WelcomeScreenWidgetState extends State<WelcomeScreenWidget> {
                         ),
                     elevation: 2,
                     borderSide: BorderSide(
-                      color: Colors.transparent,
+                      color: Color(0xFF57636C),
                       width: 1,
                     ),
                     borderRadius: 8,

@@ -33,7 +33,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+            context.pop();
           },
         ),
         title: Text(
@@ -51,7 +51,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print('FloatingActionButton pressed ...');
+          context.pushNamed('QuestionCreateScreen');
         },
         backgroundColor: FlutterFlowTheme.of(context).secondaryColor,
         elevation: 8,
@@ -79,9 +79,140 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
+                            child: InkWell(
+                              onTap: () async {
+                                context.pushNamed(
+                                  'QuestionAnswerScreen',
+                                  queryParams: {
+                                    'askerID':
+                                    serializeParam('', ParamType.String),
+                                  }.withoutNulls,
+                                );
+                              },
+                              child: Container(
+                                width: 100,
+                                height: 76,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEEEEEE),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 3,
+                                      color:
+                                      FlutterFlowTheme.of(context).black600,
+                                    )
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      12, 6, 12, 6),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            1, 0, 0, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '작성자 이름',
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText1,
+                                            ),
+                                            Text(
+                                              '0000-12-31',
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText1,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            '질문 제목',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 24,
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.remove_red_eye,
+                                                    color: Colors.black,
+                                                    size: 16,
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        2, 0, 0, 0),
+                                                    child: Text(
+                                                      '01',
+                                                      style:
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .bodyText1,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                                children: [
+                                                  Icon(
+                                                    Icons.comment_sharp,
+                                                    color: Colors.black,
+                                                    size: 16,
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        2, 0, 0, 0),
+                                                    child: Text(
+                                                      '02',
+                                                      style:
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .bodyText1,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -193,7 +324,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -305,7 +436,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -417,7 +548,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -529,7 +660,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -641,7 +772,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -753,7 +884,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -865,7 +996,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [
@@ -977,119 +1108,7 @@ class _QuestionListScreenWidgetState extends State<QuestionListScreenWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
                             child: Container(
                               width: 100,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 3,
-                                    color:
-                                        FlutterFlowTheme.of(context).black600,
-                                  )
-                                ],
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 6, 12, 6),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          1, 0, 0, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            '작성자 이름',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1,
-                                          ),
-                                          Text(
-                                            '0000-12-31',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          '질문 제목',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 24,
-                                              ),
-                                        ),
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.remove_red_eye,
-                                                  color: Colors.black,
-                                                  size: 16,
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(2, 0, 0, 0),
-                                                  child: Text(
-                                                    '01',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Icon(
-                                                  Icons.comment_sharp,
-                                                  color: Colors.black,
-                                                  size: 16,
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(2, 0, 0, 0),
-                                                  child: Text(
-                                                    '02',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 4),
-                            child: Container(
-                              width: 100,
-                              height: 70,
+                              height: 76,
                               decoration: BoxDecoration(
                                 color: Color(0xFFEEEEEE),
                                 boxShadow: [

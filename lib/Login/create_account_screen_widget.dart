@@ -1,6 +1,7 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:solveit/backend/gql/Config.dart';
-import 'package:solveit/backend/gql/QueryMutation.dart';
+import 'package:solveit/gql/Config.dart';
+import 'package:solveit/gql/QueryMutation.dart';
+
 
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -29,11 +30,11 @@ class _CreateAccountScreenWidgetState extends State<CreateAccountScreenWidget> {
   @override
   void initState() {
     super.initState();
-    confirmPasswordController = TextEditingController(text: 'choi');
+    confirmPasswordController = TextEditingController();
     confirmPasswordVisibility = false;
-    emailAddressController = TextEditingController(text: 'dogs@wolf.com');
-    nameController = TextEditingController(text: 'alpaca');
-    passwordController = TextEditingController(text: 'choi');
+    emailAddressController = TextEditingController();
+    nameController = TextEditingController();
+    passwordController = TextEditingController();
     passwordVisibility = false;
   }
 

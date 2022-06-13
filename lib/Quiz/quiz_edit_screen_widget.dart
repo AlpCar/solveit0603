@@ -87,7 +87,7 @@ class _QuizEditScreenWidgetState extends State<QuizEditScreenWidget> {
             size: 30,
           ),
           onPressed: () {
-            print('IconButton pressed ...');
+              context.pop();
           },
         ),
         title: Text(

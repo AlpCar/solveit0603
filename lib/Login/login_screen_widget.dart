@@ -1,6 +1,7 @@
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:solveit/backend/gql/Config.dart';
-import 'package:solveit/backend/gql/QueryMutation.dart';
+import 'package:solveit/gql/Config.dart';
+import 'package:solveit/gql/QueryMutation.dart';
+
 
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -276,7 +277,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
               child: FFButtonWidget(
                 onPressed: () async {
 
-                  Config config = Config();
+                  /*Config config = Config();
                   GraphQLClient _client = config.clientToQuery();
                   QueryResult result = await _client.query(
                     QueryOptions(
@@ -286,8 +287,9 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           'hashedPW': passwordLoginController.value.text
                         }),
                   );
-                  print(result);
+                  print(result);*/
                   //if(isIDexist==true){context.pushNamed('homeScreen');}
+                  context.pushNamed('HomeScreen');
                 },
                 text: '로그인',
                 options: FFButtonOptions(
